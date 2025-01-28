@@ -47,7 +47,7 @@ const updateExchangeRate = async () => {
         amount.value = "1";
     }
 
-    const URL = `${Base_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
+    const URL = `${Base_URL}/${fromCurr.value.toLowerCase()}.json`;
 
     try {
         const response = await fetch(URL);
@@ -55,7 +55,8 @@ const updateExchangeRate = async () => {
             throw new Error(`Error: ${response.status}`);
         }
         const data = await response.json();
-        const rate = data[toCurr.value.toLowerCase()];
+        console.log(data);
+        const rate = data[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()];
         const finalAmount = amtValue * rate;
         console.log(finalAmount);
         msg.innerText = `${amtValue} ${fromCurr.value} = ${finalAmount.toFixed(2)} ${toCurr.value}`;
