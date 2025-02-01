@@ -1,113 +1,165 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-body{
+body {
     background-color: brown;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 10px;
 }
 
-.container{
-    padding: 3rem;
+.container {
+    padding: 2rem;
     background-color: whitesmoke;
-    height: 50vh;
-    width:48vh;
+    width: 90%;
+    max-width: 400px;
     border-radius: 2rem;
-    
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
-.head{
+
+.head {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.head h2{
-    font-size: 2rem;
+
+.head h2 {
+    font-size: 1.8rem;
 }
 
-.inputv{
-    font-size: 0.90rem;
-    padding:5vh ;
-    
+.inputv {
+    font-size: 1rem;
+    padding: 1rem;
+    text-align: left;
 }
-.inputv p{
-    margin-left: 1vh;
-    margin-bottom: 0.5vh;
+
+.inputv p {
+    margin-bottom: 0.5rem;
 }
-.inputv input{
+
+.inputv input {
     height: 2.5rem;
     width: 100%;
     border-radius: 7px;
     border: 2px solid black;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-indent: 10px;
-}
-.inputv:hover{
-    border: none;
+    outline: none;
 }
 
-.converter{
+.converter {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3rem;
-    height: 2vh;   
-    
+    padding: 1.5rem;
+    flex-wrap: wrap;
 }
 
-.from,.to{
-    
+.from, .to {
     font-size: 1rem;
-    /* padding: 20px; */
-    
-}
-.select-from select,.to select{
-    height: 3vh;
-    width: 8vh;
-    font-size: 1rem;
-    border: none;
-    
 }
 
-.select-from,.select-to{
+.select-from select, .select-to select {
+    height: 2.5rem;
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+}
+
+.select-from, .select-to {
     display: flex;
-    justify-content: center;
     align-items: center;
-    
+    gap: 5px;
 }
-i{
+
+i {
     font-size: 1.5rem;
-    margin-top: 1vh;
     padding: 0.5vh;
 }
 
-.converted{
-    padding: 40px;
+.converted {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.btn-converter {
+    padding: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.btn-converter{
-    padding: 2vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.btn-converter button{
-    font-size: 1.2rem;
-    height: 40px;
-    width: 50%;
+.btn-converter button {
+    font-size: 1rem;
+    height: 45px;
+    width: 100%;
     border-radius: 10px;
     background-color: black;
     color: white;
     border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
 
-.select-from img, .select-to img{
-    max-width: 2rem;
-    margin-right: 0.5vh;
+.btn-converter button:hover {
+    background-color: darkgray;
+    color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .head h2 {
+        font-size: 1.5rem;
+    }
+
+    .inputv {
+        padding: 0.5rem;
+    }
+
+    .inputv input {
+        font-size: 1rem;
+        height: 2rem;
+    }
+
+    .converter {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .from, .to {
+        font-size: 0.9rem;
+    }
+
+    .select-from select, .select-to select {
+        height: 2rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-converter {
+        padding: 1rem;
+    }
+
+    .btn-converter button {
+        font-size: 0.9rem;
+        height: 40px;
+    }
 }
